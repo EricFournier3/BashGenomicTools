@@ -12,7 +12,7 @@ $(basename "$0") [-h] [-f arg1] [-o arg2]\n\n
 
 where:\n
     -h  show this help text\n
-    -s  set the path to the input fasta files directory\n
+    -f  set the path to the input fasta files directory\n
     -o  set the path to the output directory\n"	
 
 echo -e $usage

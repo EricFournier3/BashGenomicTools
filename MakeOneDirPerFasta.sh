@@ -86,7 +86,7 @@ while getopts ":hf:o:" opt; do
 done
 
 #Number of fasta files in the input directory
-NbFasta=$(ls -1 FASTADIR/*.fasta  2>/dev/null | wc -l)
+NbFasta=$(ls -1 $PathToFasta/*.fasta  2>/dev/null | wc -l)
 
 #Need a minimum of one fasta file
 if [[ $NbFasta -gt 0 ]]

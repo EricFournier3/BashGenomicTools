@@ -52,7 +52,7 @@ while getopts ":hf:o:" opt; do
     o)
       DirOut=$OPTARG
 
-      #Exit if output directory is nor a directory
+      #Exit if output directory is not a directory
       if [ ! -d $DirOut ]
 	then echo $DirOut" is not a directory"
 	exit 1
@@ -84,6 +84,16 @@ while getopts ":hf:o:" opt; do
 	
   esac
 done
+
+#User needs to input the fasta and the output directory
+if [[ -z "$PathToFasta"  ]] || [ -z "$DirOut" ]
+
+        then  echo "Options -f and -o are needed\n"
+        helpme
+	exit 1
+        
+fi
+
 
 #Number of fasta files in the input directory
 NbFasta=$(ls -1 $PathToFasta/*.fasta  2>/dev/null | wc -l)
